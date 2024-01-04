@@ -766,7 +766,7 @@ ol {
     border-radius: 30px;
 }
 .project-details-wrap .project-details-3-img {
-    height: 480px;
+    height: 1225px;
     position: relative;
     border-radius: 30px;
 }
@@ -1898,7 +1898,7 @@ ol {
     }
     .project-details-wrap .project-details-3-img,
     .project-details-wrap .project-details-2-img {
-        height: 250px;
+        height: 925px;
     }
     .project-details-wrap .row .col-md-6:first-child .project-details-3-img {
         margin-bottom: 24px;
