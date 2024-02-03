@@ -48,7 +48,6 @@ a {
 .container {
     max-width: 1170px;
 }
-
 .gap-24 {
     gap: 24px;
 }
@@ -177,10 +176,21 @@ ol {
     margin-top: 2px;
     justify-content: center;
 }
+.section-heading-small {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -01px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+    justify-content: center;
+}
 .section-heading img {
     display: block;
 }
-
 
 /* # InfoBox */
 .info-box {
@@ -390,6 +400,12 @@ ol {
 }
 .breadcrumb-area .breadcrumb-content .section-heading {
     font-size: 56px;
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+.breadcrumb-area .breadcrumb-content .section-heading-small {
+    font-size: 38px;
     position: relative;
     display: block;
     margin-bottom: 30px;
@@ -650,7 +666,11 @@ ol {
 }
 .projects-area .section-heading {
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+}
+.projects-area .section-heading-small {
+    justify-content: center;
+    margin-bottom: 30px;
 }
 .projects-area .project-item {
     margin-bottom: 24px;
