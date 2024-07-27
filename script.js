@@ -9,11 +9,3 @@ function moveRandomEl(elm) {
   moveRandom.addEventListener("mouseenter", function (e) {
     moveRandomEl(e.target);
   });
-
-
-var clicks = 0;
-
-function onClick() {
-  clicks += 1;
-  document.getElementById("clicks").innerHTML = clicks;
-};
