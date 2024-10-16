@@ -1,128 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        textarea {
-            height: 150px;
-        }
-        button {
-            display: block;
-            width: 100%;
-            background-color: #28a745;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        .success, .error {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        .success {
-            color: #28a745;
-        }
-        .error {
-            color: #dc3545;
-        }
-    </style>
+    <title>Aman Raj - Personal Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/iconoir.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="full-name">Full Name:</label>
-            <input type="text" id="full-name" name="name" placeholder="Your Name" required>
+    <main class="main-aboutpage">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <header class="header-area">
+            <div class="container">
+                <div class="gx-row d-flex align-items-center justify-content-between">
+                    <a href="./index.html" class="logo">
+                        <img src="images/extras/logo.svg" alt="Logo">
+                    </a>
 
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <nav class="navbar">
+                        <ul class="menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="blogs.html">Walkthrough/Blogs</a></li>
+                            <li class="active"><a href="youtube.html">Youtube</a></li>
+                        </ul>
+                        <a href="./contact.html" class="theme-btn">Let's talk</a>
+                    </nav>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <a href="./contact.html" class="theme-btn">Let's talk</a>
 
-            <button type="submit" id="btn">Send Message</button>
-        </form>
-        <div class="status"></div>
-    </div>
+                    <div class="show-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
+        <section class="contact-area">
+            <div class="container">
+                <div class="gx-row d-flex justify-content-between gap-24">
+                    <div class="contact-infos">
+                        <h3 data-aos="fade-up">Contact Info</h3>
+                        <ul class="contact-details">
+                            <li class="d-flex align-items-center" data-aos="zoom-in">
+                                <div class="icon-box shadow-box">
+                                    <i class="iconoir-mail"></i>
+                                </div>
+                                <div class="right">
+                                    <span>MAIL me</span>
+                                    <h4>iamanraj28@gmail.com</h4>
+                                    <h4>irainsecyt@gmail.com</h4>
+                                </div>
+                            </li>
+
+                            <li class="d-flex align-items-center" data-aos="zoom-in">
+                                <div class="icon-box shadow-box">
+                                    <i class="iconoir-phone"></i>
+                                </div>
+                                <div class="right">
+                                    <span>Contact Me</span>
+                                    <h4>+91 7274017051</h4>
+                                    <h4>+91 7248017051</h4>
+                                </div>
+                            </li>
+
+                            <li class="d-flex align-items-center" data-aos="zoom-in">
+                                <div class="icon-box shadow-box">
+                                    <i class="iconoir-pin-alt"></i>
+                                </div>
+                                <div class="right">
+                                    <span>Location</span>
+                                    <h4>Pune, Maharashtra <br>India</h4>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h3 data-aos="fade-up">Social Info</h3>
+                        <ul class="social-links d-flex align-center" data-aos="zoom-in">
+                            <li><a class="shadow-box" href="https://www.linkedin.com/in/amanraj28/" target="_blank"><i class="iconoir-linkedin"></i></a></li>
+                            <li><a class="shadow-box" href="https://www.instagram.com/rakuyou__/" target="_blank"><i class="iconoir-instagram"></i></a></li>
+                            <li><a class="shadow-box" href="https://github.com/irainsec" target="_blank"><i class="iconoir-github"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div data-aos="zoom-in" class="contact-form">
+                        <div class="shadow-box">
+                            <img src="images/extras/bg1.png" alt="BG" class="bg-img">
+                            <img src="images/extras/icon3.png" alt="Icon">
+                            <h1>Let’s work <span>together.</span></h1>
+                            <form method="POST" onsubmit="sendEmail(); reset(); return false;">
+                                <div class="alert alert-success messenger-box-contact__msg" style="display: none" role="alert">
+                                    Your message was sent successfully.
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" name="full-name" id="full-name" placeholder="Name *">
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" name="email" id="email" placeholder="Email *">
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" name="subject" id="subject" placeholder="Your Subject *">
+                                </div>
+                                <div class="input-group">
+                                    <textarea name="message" id="message" placeholder="Your Message *"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <button class="theme-btn submit-btn" id="btn" name="submit" type="submit">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-area">
+            <div class="container">
+                <div class="footer-content text-center">
+                    <a href="./index.html" class="logo">
+                        <img src="images/extras/logo.svg" alt="Logo">
+                    </a>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="works.html">Works</a></li>
+                        <li><a href="blogs.html">Walkthrough/Blogs</a></li>
+                        <li><a href="youtube.html">Youtube</a></li>
+                    </ul>
+                    <p class="copyright">
+                        © All rights reserved made with 💜 by <span>Aman Raj</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+    
+
+    <script src="js/jquery-3.6.4.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Collect form data
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click',function(e){
+            e.preventDefault()
             var name = document.getElementById('full-name').value;
             var email = document.getElementById('email').value;
             var subject = document.getElementById('subject').value;
             var message = document.getElementById('message').value;
+            var body = 'name: '+ name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
 
-            // Construct email body
-            var body = `
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Subject:</strong> ${subject}</p>
-                <p><strong>Message:</strong> ${message}</p>
-            `;
 
-            // Use SMTPJS or another service to send the email
             Email.send({
-                SecureToken: "1133c9dc-0839-4138-a33e-dd9327c245b4",
-                To: 'irainsecyt@gmail.com',
-                From: 'iamanraj28@gmail.com',
-                Subject: "New Contact Form Submission: " + subject,
-                Body: body
+                SecureToken : "1133c9dc-0839-4138-a33e-dd9327c245b4",
+                To : 'irainsecyt@gmail.com',
+                From : 'irainsecyt@gmail.com',
+                Subject : "New Contact from irainsec.github.io: " + subject,
+                Body : body
             }).then(
-                message => {
-                    document.querySelector('.status').innerHTML = '<p class="success">Message sent successfully!</p>';
-                },
-                error => {
-                    document.querySelector('.status').innerHTML = '<p class="error">Failed to send message: ' + error + '</p>';
-                }
+            message => alert(message)
             );
-        });
+        })
     </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ajax-form.js"></script>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-</body>
-</html>
+</body></html>
