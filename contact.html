@@ -164,13 +164,18 @@
 
 
             Email.send({
-                SecureToken : "d7fe3363-648d-4741-9c75-8f17620ff6cc",
+                SecureToken : "faa52864-a13e-41b1-aa30-0312e102df06",
                 To : 'iamanraj28@gmail.com',
-                From : "iamanraj28@gmail.com",
-                Subject : "New Contact from irainsec.github.io",
+                From : email,
+                Subject : "New Contact from irainsec.github.io: " + subject,
                 Body : body
             }).then(
-            message => alert(message)
+                message => {
+                    document.querySelector('.status').innerHTML = '<p class="success">Message sent successfully!</p>';
+                },
+                error => {
+                    document.querySelector('.status').innerHTML = '<p class="error">Failed to send message: ' + error + '</p>';
+                }
             );
         })
     </script>
