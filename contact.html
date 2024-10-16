@@ -170,12 +170,7 @@
                 Subject : "New Contact from irainsec.github.io: " + subject,
                 Body : body
             }).then(
-                message => {
-                    document.querySelector('.status').innerHTML = '<p class="success">Message sent successfully!</p>';
-                },
-                error => {
-                    document.querySelector('.status').innerHTML = '<p class="error">Failed to send message: ' + error + '</p>';
-                }
+            message => alert(message)
             );
         })
     </script>
