@@ -46,7 +46,7 @@ a {
     text-align: right;
 }
 .container {
-    max-width: 1170px;
+    max-width: 1300px;
 }
 
 .sectionyt {
@@ -171,7 +171,7 @@ ol {
 }
 .section-heading {
     color: #ffffff;
-    font-size: 74px;
+    font-size: 50px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: -01px;
@@ -180,6 +180,7 @@ ol {
     gap: 5px;
     margin-top: 2px;
     justify-content: center;
+    margin-top: 30px;
 }
 .section-heading-small {
     color: #ffffff;
@@ -386,6 +387,7 @@ ol {
     margin: 0;
 }
 .info-box.about-profile-box,
+
 .info-box.about-blog-box {
     display: flex;
     flex-direction: column;
@@ -423,9 +425,8 @@ ol {
 
 /* # Header */
 .header-area{
-    margin-top: 10px;
+    margin-top: 30px;
 }
-
 .header-area .logo {
     display: inline-block;
     z-index: 16;
@@ -493,7 +494,7 @@ ol {
 
 /* # About */
 .about-area {
-    padding-top: 80px;
+    padding-top: 40px;
 }
 .about-area .about-me-box {
     position: relative;
@@ -664,7 +665,7 @@ ol {
 
 /* # Project */
 .projects-area {
-    padding-top: 65px;
+    padding-top: 35px;
 }
 .projects-area .container > .section-heading {
     display: none;
@@ -1084,10 +1085,6 @@ ol {
     line-height: 25px;
     font-size: 14px;
     margin: 0;
-}
-.service-area .profile-contact-credentials-wrap .about-contact-box {
-    height: 100%;
-    padding-top: 102px;
 }
 
 
@@ -1558,11 +1555,57 @@ ol {
     }
 }
 
-
+/*asdasdasdasdsadasdsadasdasdsadadsadasdsad*/
 
 
 /* Responsive */
 @media (max-width: 1090px) {
+    .header-area{
+        margin-top: 15px;
+    }
+    .about-area {
+        padding-top: 25px;
+    }
+    /* Add some padding to each menu item */
+    .header-area .navbar .menu li {
+        padding: 15px 0; /* Increase top and bottom padding for better spacing */
+        font-size: 18px; /* Increase font size for better readability */
+        text-align: center; /* Ensure menu items are aligned */
+    }
+
+    /* Increase the gap between menu items */
+    .header-area .navbar .menu {
+        display: flex;
+        justify-content: center; /* Center the items horizontally */
+        align-items: center; /* Center the items vertically */
+        gap: 30px; /* Increase the gap between items */
+    }
+
+    /* Adjust the width of the navbar for better visibility */
+    .header-area .navbar {
+        display: flex;
+        justify-content: center; /* Center the navbar content */
+        padding-left: 0; /* Remove left padding if not necessary */
+        padding-right: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: center;
+        width: 100%; /* Make sure the menu stretches the entire width of the screen */
+    }
+
+    /* Add some background color and padding to the navbar for better clarity */
+    .header-area .navbar.active {
+        background: #0F0F0F; /* Keep the background dark */
+        padding-top: 80px; /* Adjust the padding to give more space */
+        padding-bottom: 40px; /* Add space to the bottom of the navbar */
+    }
+
+    /* Make sure the show-menu button is still visible */
+    .header-area .show-menu {
+        display: block;
+        padding: 10px 15px;
+        font-size: 20px; /* Make the button text larger */
+    }
     .container {
         padding: 0 20px;
     }
@@ -1582,6 +1625,14 @@ ol {
     }
     .about-area .about-me-box .infos .about-btn {
         bottom: 25px;
+    }
+    .about-area .container > .row:nth-child(3) .col-md-6 {
+        width: 100%;
+        margin-bottom: 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+        gap: 20px;
+
     }
     .info-box {
         padding: 20px;
@@ -1611,7 +1662,7 @@ ol {
     }
 
     .section-heading {
-        font-size: 54px;
+        font-size: 40px;
     }
     .section-heading img {
         width: 25px;
@@ -1629,9 +1680,59 @@ ol {
         width: 100%;
         padding-bottom: 30px;
     }
+    .bottom-area .container > .row:nth-child(1) .col-md-6 {
+        margin-bottom: 24px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 @media (max-width: 920px) {
+    .header-area{
+        margin-top: 15px;
+    }
+    .about-area {
+        padding-top: 25px;
+    }
+    /* Add some padding to each menu item */
+    .header-area .navbar .menu li {
+        padding: 15px 0; /* Increase top and bottom padding for better spacing */
+        font-size: 18px; /* Increase font size for better readability */
+        text-align: center; /* Ensure menu items are aligned */
+    }
+
+    /* Increase the gap between menu items */
+    .header-area .navbar .menu {
+        display: flex;
+        justify-content: center; /* Center the items horizontally */
+        align-items: center; /* Center the items vertically */
+        gap: 30px; /* Increase the gap between items */
+    }
+
+    /* Adjust the width of the navbar for better visibility */
+    .header-area .navbar {
+        display: flex;
+        justify-content: center; /* Center the navbar content */
+        padding-left: 0; /* Remove left padding if not necessary */
+        padding-right: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: center;
+        width: 100%; /* Make sure the menu stretches the entire width of the screen */
+    }
+
+    /* Add some background color and padding to the navbar for better clarity */
+    .header-area .navbar.active {
+        background: #0F0F0F; /* Keep the background dark */
+        padding-top: 80px; /* Adjust the padding to give more space */
+        padding-bottom: 40px; /* Add space to the bottom of the navbar */
+    }
+
+    /* Make sure the show-menu button is still visible */
+    .header-area .show-menu {
+        display: block;
+        padding: 10px 15px;
+        font-size: 20px; /* Make the button text larger */
+    }
     .about-area .container .row:first-child .col-md-6 {
         flex: 0 0 auto;
         width: 100%;
@@ -1671,20 +1772,22 @@ ol {
     .info-box.about-services-box .icon-boxes {
         gap: 40px;
     }
-    .about-area .container > .row:nth-child(3) .col-md-6 {
+    .about-area .container > .row:nth-child(3) .col-md-4 {
         width: 100%;
+        margin-bottom: 24px;
+    }
+    .bottom-area .container > .row:nth-child(1) .col-md-4 {
+        width: 100%;
+        margin-bottom: 24px;
     }
     .info-box.about-client-box {
         margin-bottom: 24px;
     }
     .section-heading {
-        font-size: 36px;
+        font-size: 32px;
         justify-content: center;
     }
-    .profile-contact-credentials-wrap {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-    }
+    
     .project-details-wrap .project-about-2,
     .project-details-wrap .project-infos-wrap {
         gap: 24px;
@@ -1694,28 +1797,14 @@ ol {
     }
 }
 
-@media (max-width: 810px) {
-    .credential-area .credential-sidebar {
-        width: 300px;
-    }
-    .credential-area .container .gx-row {
-        gap: 40px;
-    }
-    .about-area .about-me-wrap {
-        flex-direction: column;
-        gap: 40px;
-        align-items: center !important;
-    }
-    .project-details-wrap .project-infos-wrap {
-        flex-direction: column;
-        padding: 50px 24px 24px 24px;
-    }
-    .about-area .about-details .section-heading {
-        margin-bottom: 40px;
-    }
-}
 
 @media (max-width: 767px) {
+    .projects-area {
+        padding-top: 35px;
+    }
+    .about-area {
+        padding-top: 25px;
+    }
     .header-area {
         padding: 20px 0;
     }
@@ -1751,31 +1840,55 @@ ol {
         /* max-height: 90vh; */
     }
     .header-area .navbar .menu {
+        margin-top: 70px;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         align-items: center;
         width: 100%;
-        gap: 30px;
+        gap: 10px;
     }
     .header-area .navbar .menu li a {
         padding: 0;
     }
     .header-area .navbar .theme-btn {
         display: inline-block;
-        margin-top: 48px;
+        margin-top: 24px;
     }
     .header-area .gx-row > .theme-btn {
         display: none;
     }
-
-
     .header-area .show-menu {
         display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 50px; /* Adjust as necessary */
+        height: 50px; /* Adjust as necessary */
+        background-color: #0F0F0F; /* Change to desired color */
+        color: #fff; /* Text color */
+        font-size: 24px; /* Font size */
+        cursor: pointer;
+    }
+    .credential-area .credential-sidebar {
+        width: 300px;
+    }
+    .about-area .about-me-wrap {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center !important;
+    }
+    .project-details-wrap .project-infos-wrap {
+        flex-direction: column;
+        padding: 50px 24px 24px 24px;
+    }
+    .about-area .about-details .section-heading {
+        margin-bottom: 40px;
     }
     .contact-area .gx-row,
     .credential-area .container .gx-row  {
         flex-direction: column;
+        gap: 40px;
     }
     .contact-area .contact-form {
         margin-top: 50px;
@@ -1797,7 +1910,7 @@ ol {
         flex-direction: column;
     }
     .project-details-wrap .project-details-img {
-        height: 300px;
+        height: 200px;
     }
     .breadcrumb-area .breadcrumb-content .section-heading {
         font-size: 36px;
@@ -1820,7 +1933,14 @@ ol {
         display: flex;
         margin-bottom: 30px;
     }
-
+    .projects-area .container > .section-heading {
+        display: flex;
+        margin-bottom: 40px;
+    }
+    .projects-area .col-md-8 .section-heading {
+        display: flex;
+        font-size: 22px;
+    }
     .blog-details-area,
     .blog-area {
         padding-top: 40px;
@@ -1837,6 +1957,7 @@ ol {
     }
 
 }
+
 @media (max-width: 585px) {
     .about-area .about-me-box {
         flex-direction: column;
@@ -1892,10 +2013,10 @@ ol {
     .contact-area .contact-infos .contact-details li + li {
         margin-top: 40px;
     }
-
     .projects-area .container > .row,
     .profile-contact-credentials-wrap {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     .about-area .about-image-box {
         max-width: 370px;
@@ -1906,7 +2027,7 @@ ol {
     }
     .about-area .about-details .about-details-inner h1,
     .section-heading {
-        font-size: 26px;
+        font-size: 20px;
     }
     .about-area .about-details .about-details-inner {
         padding-top: 80px;
@@ -1916,7 +2037,9 @@ ol {
         margin-bottom: 40px;
     }
     .projects-area .col-md-8 .section-heading {
-        display: none;
+        display: flex;
+        font-size: 18px;
+        margin-top: -20px;
     }
     .breadcrumb-area .breadcrumb-content .section-heading {
         font-size: 24px;
@@ -1966,6 +2089,7 @@ ol {
     }
     .info-box.about-services-box .icon-boxes {
         gap: 25px;
+        margin-bottom: 40px;
     }
     .info-box.about-services-box .icon-boxes i {
         font-size: 30px;
