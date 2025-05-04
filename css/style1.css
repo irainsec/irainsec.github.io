@@ -1,24 +1,25 @@
 /* Container for all flip cards */
 .column {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
     gap: 20px;
     padding: 20px;
+    box-sizing: border-box;
   }
   
   /* Responsive: 2 cards per row on smaller screens */
   @media (max-width: 768px) {
     .column {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
     }
   }
   
-  /* Flip card base container */
+  /* Flip card base */
   .flip-card {
     background-color: transparent;
-    width: 100%;
-    height: 300px;
-    perspective: 1000px; /* Creates the 3D effect */
+    width: 100%; /* Take full grid column */
+    aspect-ratio: 1 / 1; /* Maintain square shape */
+    perspective: 1000px; /* 3D flip effect */
   }
   
   /* Inner part that flips */
@@ -36,7 +37,7 @@
     transform: rotateY(180deg);
   }
   
-  /* Front and back faces of the card */
+  /* Front and back faces */
   .flip-card-front,
   .flip-card-back {
     position: absolute;
@@ -45,15 +46,15 @@
     backface-visibility: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Front side */
   .flip-card-front {
     background-color: #fff;
     color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
     font-size: 1.2rem;
   }
@@ -63,9 +64,7 @@
     background-color: #f1f1f1;
     color: black;
     transform: rotateY(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 10px;
     font-size: 1rem;
   }
+  
