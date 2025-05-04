@@ -181,6 +181,7 @@ ol {
     margin-top: 2px;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 40px;
 }
 .section-heading-small {
     color: #ffffff;
@@ -193,6 +194,7 @@ ol {
     gap: 5px;
     margin-top: 2px;
     justify-content: center;
+    margin-bottom: 40px;
 }
 .section-heading img {
     display: block;
@@ -1517,13 +1519,13 @@ ol {
 }
 
 .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
     padding: 20px 0;
-    padding-top: 20px;
+    /* Remove this line ↓ if present */
+    /* position: absolute; */
   }
   
   .flip-card {
@@ -1719,6 +1721,7 @@ ol {
 
     .section-heading {
         font-size: 40px;
+        margin-bottom: 40px;
     }
     .section-heading img {
         width: 25px;
@@ -1842,6 +1845,7 @@ ol {
     .section-heading {
         font-size: 32px;
         justify-content: center;
+        margin-bottom: 40px;
     }
     
     .project-details-wrap .project-about-2,
