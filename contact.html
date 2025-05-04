@@ -72,7 +72,6 @@
                                 <div class="right">
                                     <span>Contact Me</span>
                                     <h4>+91 7274017051</h4>
-                                    <h4>+91 7248017051</h4>
                                 </div>
                             </li>
 
@@ -153,26 +152,33 @@
     <script src="js/jquery-3.6.4.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        var btn = document.getElementById('btn');
-        btn.addEventListener('click',function(e){
-            e.preventDefault()
-            var name = document.getElementById('full-name').value;
-            var email = document.getElementById('email').value;
-            var subject = document.getElementById('subject').value;
-            var message = document.getElementById('message').value;
-            var body = 'name: '+ name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
-
-
+        function sendEmail() {
+            var name = document.getElementById("full-name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+    
+            if (!name || !email || !subject || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
+    
             Email.send({
                 SecureToken : "1133c9dc-0839-4138-a33e-dd9327c245b4",
                 To : 'iamanraj28@gmail.com',
                 From : 'iamanraj28@gmail.com',
-                Subject : "New Contact from irainsec.github.io: " + subject,
-                Body : body
+                Subject : "New Contact from iamanraj.com: " + subject,
+                Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
             }).then(
-            message => alert(message)
+                response => {
+                    if (response === "OK") {
+                        document.querySelector(".messenger-box-contact__msg").style.display = "block";
+                    } else {
+                        alert("Failed to send message: " + response);
+                    }
+                }
             );
-        })
+        }
     </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/aos.js"></script>
