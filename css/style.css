@@ -1519,13 +1519,12 @@ ol {
 }
 
 .cert-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     justify-content: center;
+    align-items: center;
     padding: 20px 0;
-    /* Remove this line ↓ if present */
-    /* position: absolute; */
   }
   
   .flip-card {
