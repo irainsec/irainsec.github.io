@@ -16,6 +16,132 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <style>
+    /* --- Dark Theme Colors --- */
+    :root {
+        --bg-dark: #0d0d0d;
+        --card-dark: #111;
+        --neon-blue: #00b3ff;
+        --neon-purple: #b400ff;
+        --text-light: #e6e6e6;
+        --text-muted: #999;
+        --glow: 0 0 15px rgba(0, 179, 255, 0.7);
+    }
+
+    .experience-section {
+        padding: 40px 0;
+        color: var(--text-light);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* NEON HEADING */
+    .experience-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: var(--neon-blue);
+        text-shadow: 0 0 8px var(--neon-blue), 0 0 20px var(--neon-purple);
+    }
+
+    /* TIMELINE WRAPPER */
+    .timeline {
+        position: relative;
+        margin-left: 20px;
+    }
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(var(--neon-blue), var(--neon-purple));
+        box-shadow: var(--glow);
+    }
+
+    /* EXPERIENCE CARD */
+    .exp-card {
+        position: relative;
+        background: var(--card-dark);
+        margin: 25px 0;
+        padding: 20px 25px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 0 12px rgba(0,0,0,0.4);
+        transition: 0.3s ease;
+    }
+
+    /* Timeline Node */
+    .exp-card::before {
+        content: "⬤";
+        position: absolute;
+        left: -32px;
+        top: 12px;
+        font-size: 18px;
+        color: var(--neon-blue);
+        text-shadow: var(--glow);
+    }
+
+    /* Hover Glow */
+    .exp-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 0 20px rgba(0, 179, 255, 0.4);
+        border-color: var(--neon-blue);
+    }
+
+    /* Titles */
+    .exp-card h4 {
+        font-size: 0.95rem;
+        color: var(--neon-purple);
+        margin-bottom: 5px;
+        opacity: 0.9;
+    }
+    .exp-card h3 {
+        font-size: 1.35rem;
+        color: var(--neon-blue);
+        margin: 5px 0;
+        text-shadow: 0 0 6px var(--neon-blue);
+    }
+    .exp-card h5 {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+    }
+
+    /* Description */
+    .exp-card p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    /* TOOL BADGES */
+    .badge-box {
+        margin-top: 10px;
+    }
+    .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        background: rgba(0, 179, 255, 0.08);
+        border: 1px solid rgba(0, 179, 255, 0.4);
+        color: var(--neon-blue);
+        border-radius: 6px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        font-size: 0.75rem;
+        transition: 0.2s;
+    }
+    .badge:hover {
+        background: var(--neon-blue);
+        color: black;
+        box-shadow: var(--glow);
+    }
+
+    /* ICONS (emoji-based for lightweight design) */
+    .icon {
+        margin-right: 6px;
+        font-size: 1.1rem;
+    }
+</style>
 
     <main class="main-aboutpage">
 
@@ -198,135 +324,71 @@
                         </div>
 
                         <div class="credential-edc-exp credential-experience">
-                            <h2 class="section-title" data-aos="fade-up">Experience</h2>
+                            <section class="experience-section">
+    <h2 data-aos="fade-up">⚡ Experience</h2>
 
-<div class="timeline">
+    <div class="timeline">
 
-    <!-- Cybersecurity Consultant -->
-    <div class="timeline-item" data-aos="zoom-in">
-        <div class="timeline-date">20 Feb 2024 – Present</div>
-        <h3 class="timeline-role">Cybersecurity Consultant</h3>
-        <h4 class="timeline-company">Altisec Technologies Pvt. Ltd.</h4>
+        <!-- ALTISEC -->
+        <div class="exp-card" data-aos="fade-right">
+            <h4>20th Feb, 2024 - Present</h4>
+            <h3><span class="icon">🛡️</span>Cybersecurity Consultant</h3>
+            <h5>Altisec Technologies Pvt. Ltd.</h5>
+            <p>Currently working as a VAPT Analyst, performing deep-dive security assessments, identifying critical vulnerabilities, and simulating real-world attacks across enterprise infrastructures. I collaborate closely with SOC teams, improve detection maturity, and design remediation strategies aligned with industry standards.</p>
 
-        <p class="timeline-summary">
-            Leading VAPT engagements, SOC automation, and offensive security initiatives. 
-            Developed advanced playbooks, automated response workflows, and custom threat intelligence tools.
-        </p>
-
-        <!-- Badges -->
-        <div class="badge-box">
-            <span class="badge">VAPT</span>
-            <span class="badge">XSOAR</span>
-            <span class="badge">Tines</span>
-            <span class="badge">QRadar</span>
-            <span class="badge">CrowdStrike</span>
-            <span class="badge">Wazuh</span>
-            <span class="badge">Web Security</span>
-            <span class="badge">Automation</span>
-            <span class="badge">Threat Intel</span>
-        </div>
-
-        <!-- More details expandable -->
-        <details class="more-details">
-            <summary>More Details</summary>
-            <div class="details-content">
-
-                <h4>🚀 SOC Automation & Playbook Development (XSOAR & Tines)</h4>
-                <ul>
-                    <li>Designed end-to-end automated incident response workflows, reducing MTTD/MTTR significantly.</li>
-                    <li>Built custom playbooks for malware, phishing, suspicious logins, DLP alerts, IOC correlation, and auto-triage.</li>
-                    <li>Integrated APIs: CrowdStrike, Cortex XDR, VirusTotal, AbuseIPDB, OTX, QRadar, FireEye, Wazuh, email gateways.</li>
-                    <li>Automated repetitive tasks: IOC blocking, user isolation, URL detonation, WAF rule creation, log retrieval.</li>
-                    <li>Developed scalable, error-handled workflows for reliable execution.</li>
-                    <li>Improved alert quality using behavior-driven automation.</li>
-                </ul>
-
-                <h4>🛡 Web VAPT</h4>
-                <ul>
-                    <li>Performed deep-dive penetration testing using Burp Suite, ZAP, and Nikto.</li>
-                    <li>Identified vulnerabilities: SQLi, XSS, CSRF, authentication bypass, session flaws, access control weaknesses.</li>
-                    <li>Delivered detailed remediation reports aligned with OWASP Top 10.</li>
-                </ul>
-
-                <h4>🌐 Network VAPT</h4>
-                <ul>
-                    <li>Conducted full-scope network assessments using Nmap, Nessus, and Metasploit.</li>
-                    <li>Detected misconfigurations, weak encryption, open ports, privilege escalation, and unpatched services.</li>
-                    <li>Simulated real-world attacks to evaluate network defense capability.</li>
-                </ul>
-
-                <h4>📌 Source Code Review</h4>
-                <ul>
-                    <li>Performed SAST using SonarQube to detect hardcoded secrets, unsafe API use, and insecure crypto.</li>
-                    <li>Collaborated with developers to enforce secure coding practices.</li>
-                </ul>
-
-                <h4>🔥 Additional Security Operations Responsibilities</h4>
-                <ul>
-                    <li>Developed an internal threat intelligence platform.</li>
-                    <li>Built custom VAPT tools for offensive security workflows.</li>
-                    <li>Monitored SOC alerts using QRadar & SIEM++.</li>
-                    <li>Investigated email threats, malware, anomalous traffic, and compromised hosts.</li>
-                    <li>Analyzed attacker TTPs to strengthen detection logic.</li>
-                    <li>Conducted DDoS monitoring & blocked malicious IOCs in firewalls.</li>
-                    <li>Managed honeypots, deception systems (email/network decoys).</li>
-                    <li>Performed File Integrity Monitoring (FIM) on mission-critical servers.</li>
-                    <li>Analyzed malicious URLs and domains across servers.</li>
-                </ul>
-
+            <div class="badge-box">
+                <span class="badge">VAPT</span>
+                <span class="badge">Web Security</span>
+                <span class="badge">Network Pentesting</span>
+                <span class="badge">SIEM</span>
             </div>
-        </details>
-    </div>
-
-
-    <!-- Cyberfrat – Project Intern -->
-    <div class="timeline-item" data-aos="zoom-in">
-        <div class="timeline-date">11 Oct 2023 – 5 Feb 2024</div>
-        <h3 class="timeline-role">Project Intern</h3>
-        <h4 class="timeline-company">Cyberfrat</h4>
-        <p class="timeline-summary">
-            Built a phishing simulation platform to improve employee awareness across organizations.
-        </p>
-        <div class="badge-box">
-            <span class="badge">Phishing Simulation</span>
-            <span class="badge">Python</span>
-            <span class="badge">Awareness Training</span>
-            <span class="badge">Security Tools</span>
         </div>
-    </div>
 
-    <!-- CyberSiksha Trainee -->
-    <div class="timeline-item" data-aos="zoom-in">
-        <div class="timeline-date">8 Aug 2023 – 5 Feb 2024</div>
-        <h3 class="timeline-role">BFSI CyberSiksha Trainee & Intern</h3>
-        <h4 class="timeline-company">Cyberfrat</h4>
-        <p class="timeline-summary">
-            Gained hands-on experience in Linux, Windows, Network Pentesting, Web Security, Cloud Security, SIEM, and Application Security.
-        </p>
-        <div class="badge-box">
-            <span class="badge">Linux</span>
-            <span class="badge">Pentesting</span>
-            <span class="badge">Cloud Security</span>
-            <span class="badge">SIEM</span>
+        <!-- CYBERFRAT PROJECT -->
+        <div class="exp-card" data-aos="fade-right">
+            <h4>11th Oct, 2023 - 5th Feb, 2024</h4>
+            <h3><span class="icon">🧪</span>Project & Intern</h3>
+            <h5>Cyberfrat</h5>
+            <p>Developed a fully functional phishing simulation tool aimed at strengthening employee security awareness and helping organizations measure real-world phishing susceptibility.</p>
+
+            <div class="badge-box">
+                <span class="badge">Python</span>
+                <span class="badge">Automation</span>
+                <span class="badge">Email Security</span>
+            </div>
         </div>
-    </div>
 
-    <!-- Balak Developer -->
-    <div class="timeline-item" data-aos="zoom-in">
-        <div class="timeline-date">2023</div>
-        <h3 class="timeline-role">Full-Stack Developer</h3>
-        <h4 class="timeline-company">Balak</h4>
-        <p class="timeline-summary">
-            Built a portal for students and affiliated colleges under VMSB_UTU University.
-        </p>
-        <div class="badge-box">
-            <span class="badge">Frontend</span>
-            <span class="badge">Backend</span>
-            <span class="badge">Web Development</span>
+        <!-- CYBERSIKHA -->
+        <div class="exp-card" data-aos="fade-right">
+            <h4>8th Aug, 2023 - 5th Feb, 2024</h4>
+            <h3><span class="icon">🎓</span>BFSI CyberSikha Trainee</h3>
+            <h5>Cyberfrat</h5>
+            <p>Hands-on training in Linux, Windows, Network Security, Pentesting, Cloud Security, Web App Security, and SIEM operations, gaining practical experience across multiple security domains.</p>
+
+            <div class="badge-box">
+                <span class="badge">Linux</span>
+                <span class="badge">Windows</span>
+                <span class="badge">Cloud</span>
+                <span class="badge">Pentesting</span>
+            </div>
         </div>
-    </div>
 
-</div>
+        <!-- BALAK -->
+        <div class="exp-card" data-aos="fade-right">
+            <h4>2023</h4>
+            <h3><span class="icon">💻</span>Full-Stack Developer</h3>
+            <h5>Balak</h5>
+            <p>Developed a portal for VMSB_UTU students and affiliated colleges, enabling smooth academic workflows and centralized access to student resources.</p>
+
+            <div class="badge-box">
+                <span class="badge">Frontend</span>
+                <span class="badge">Backend</span>
+                <span class="badge">Full Stack</span>
+            </div>
+        </div>
+
+    </div>
+</section>
 
                         </div>
 
