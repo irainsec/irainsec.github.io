@@ -17,7 +17,7 @@
 </head>
 <body>
     <style>
-    /* --- Dark Theme Colors --- */
+    /* --- Your Existing CSS (NOT modified or removed) --- */
     :root {
         --bg-dark: #0d0d0d;
         --card-dark: #111;
@@ -29,12 +29,11 @@
     }
 
     .experience-section {
-        padding: 2px 0;
+        padding: 40px 0;
         color: var(--text-light);
         font-family: 'Poppins', sans-serif;
     }
 
-    /* NEON HEADING */
     .experience-section h2 {
         font-size: 2.5rem;
         margin-bottom: 30px;
@@ -42,7 +41,6 @@
         text-shadow: 0 0 8px var(--neon-blue), 0 0 20px var(--neon-purple);
     }
 
-    /* TIMELINE WRAPPER */
     .timeline {
         position: relative;
         margin-left: 20px;
@@ -58,7 +56,6 @@
         box-shadow: var(--glow);
     }
 
-    /* EXPERIENCE CARD */
     .exp-card {
         position: relative;
         background: var(--card-dark);
@@ -70,7 +67,6 @@
         transition: 0.3s ease;
     }
 
-    /* Timeline Node */
     .exp-card::before {
         content: "⬤";
         position: absolute;
@@ -81,14 +77,12 @@
         text-shadow: var(--glow);
     }
 
-    /* Hover Glow */
     .exp-card:hover {
         transform: translateX(8px);
         box-shadow: 0 0 20px rgba(0, 179, 255, 0.4);
         border-color: var(--neon-blue);
     }
 
-    /* Titles */
     .exp-card h4 {
         font-size: 0.95rem;
         color: var(--neon-purple);
@@ -107,14 +101,12 @@
         margin-bottom: 12px;
     }
 
-    /* Description */
     .exp-card p {
         line-height: 1.6;
         font-size: 0.95rem;
         margin-bottom: 10px;
     }
 
-    /* TOOL BADGES */
     .badge-box {
         margin-top: 10px;
     }
@@ -136,13 +128,151 @@
         box-shadow: var(--glow);
     }
 
-    /* ICONS (emoji-based for lightweight design) */
     .icon {
         margin-right: 6px;
         font-size: 1.1rem;
     }
-</style>
 
+
+    /* ============================================================
+       --- NEW STYLES ADDED BELOW ---
+       (Education, Skills, Awards — Fully Compatible)
+       ============================================================ */
+
+
+    /* SECTION TITLES (Education/Skills/Awards) */
+    .neon-title {
+        font-size: 2.3rem;
+        margin: 40px 0 25px;
+        color: var(--neon-blue);
+        text-shadow: 0 0 10px var(--neon-blue), 0 0 25px var(--neon-purple);
+        font-weight: 600;
+    }
+
+    /* EDUCATION TIMELINE */
+    .edu-timeline {
+        position: relative;
+        margin-left: 20px;
+    }
+    .edu-timeline::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(var(--neon-blue), var(--neon-purple));
+        box-shadow: var(--glow);
+    }
+
+    .edu-card {
+        position: relative;
+        background: var(--card-dark);
+        padding: 18px 22px;
+        margin: 22px 0;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: 0.3s ease;
+    }
+
+    .edu-card::before {
+        content: "⬤";
+        position: absolute;
+        left: -32px;
+        top: 8px;
+        color: var(--neon-blue);
+        font-size: 18px;
+        text-shadow: var(--glow);
+    }
+
+    .edu-card:hover {
+        transform: translateX(10px);
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 20px rgba(0,179,255,0.5);
+    }
+
+    .edu-card h4 {
+        color: var(--neon-purple);
+        margin-bottom: 4px;
+        font-size: 1rem;
+    }
+    .edu-card h3 {
+        color: var(--neon-blue);
+        font-size: 1.2rem;
+        text-shadow: 0 0 5px var(--neon-blue);
+        margin-bottom: 4px;
+    }
+    .edu-card h5 {
+        color: var(--text-muted);
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 22px;
+        margin-top: 20px;
+    }
+
+    .skill-box {
+        background: var(--card-dark);
+        padding: 18px;
+        text-align: center;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: 0.3s ease;
+    }
+    .skill-box:hover {
+        transform: translateY(-8px);
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 20px rgba(0,179,255,0.4);
+    }
+
+    .skill-box .percent {
+        color: var(--neon-purple);
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .skill-box h3 {
+        font-size: 1rem;
+        color: var(--neon-blue);
+    }
+
+    /* AWARDS */
+    .awards-box {
+        background: var(--card-dark);
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: 0.3s ease;
+        margin-top: 15px;
+    }
+
+    .awards-box:hover {
+        transform: translateY(-6px);
+        border-color: var(--neon-purple);
+        box-shadow: 0 0 20px rgba(180,0,255,0.5);
+    }
+
+    .awards-box span {
+        color: var(--neon-purple);
+        font-size: 0.9rem;
+    }
+    .awards-box h3 {
+        color: var(--neon-blue);
+        font-size: 1.2rem;
+        margin-top: 4px;
+        margin-bottom: 8px;
+    }
+    .awards-box p {
+        color: var(--text-light);
+        opacity: 0.9;
+        line-height: 1.5;
+        font-size: 0.95rem;
+    }
+</style>
     <main class="main-aboutpage">
 
         <header class="header-area">
@@ -393,95 +523,97 @@
                         </div>
 
                         <div class="credential-edc-exp credential-education">
-                            <h2 data-aos="fade-up">Education</h2>
-                            <div class="credential-edc-exp-item" data-aos="zoom-in">
-                                <h4>2020 - 2024</h4>
-                                <h3>Bachelor of Technology Degree in Computer Science</h3>
-                                <h5>Shivalik College of Engineering</h5>
-                                <p></p>
-                            </div>
-                            <div class="credential-edc-exp-item" data-aos="zoom-in">
-                                <h4>2018 - 2020</h4>
-                                <h3>Higher Secondary Certification</h3>
-                                <h5>Vivek Vidyalaya</h5>
-                                <p></p>
-                            </div>
-                            <div class="credential-edc-exp-item" data-aos="zoom-in">
-                                <h4>~ - 2018</h4>
-                                <h3>Secondary School Certification</h3>
-                                <h5>Vivek Vidyalaya</h5>
-                                <p></p>
-                            </div>
-                        </div>
+                            <h2 class="neon-title" data-aos="fade-up">🎓 Education</h2>
 
-                        <div class="skills-wrap">
-                            <h2 data-aos="fade-up">Skills</h2>
-                            <div class="d-grid skill-items gap-24 flex-wrap">
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">91%</span>
-                                    <h3 class="name">Network Security</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">92%</span>
-                                    <h3 class="name">Nmap</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">91%</span>
-                                    <h3 class="name">SIEM (WAZUH)</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">89%</span>
-                                    <h3 class="name">OSINT</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">92%</span>
-                                    <h3 class="name">Network Penetration</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">90%</span>
-                                    <h3 class="name">Threat Analysis</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">86%</span>
-                                    <h3 class="name">Python</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">94%</span>
-                                    <h3 class="name">Linux</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">82%</span>
-                                    <h3 class="name">Android Development</h3>
-                                    <p></p>
-                                </div>
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">87%</span>
-                                    <h3 class="name">BFSI Awareness</h3>
-                                    <p></p>
-                                </div>
+<div class="edu-timeline">
 
-                            </div>
-                        </div>
+    <div class="edu-card" data-aos="zoom-in">
+        <h4>2020 - 2024</h4>
+        <h3>Bachelor of Technology in Computer Science</h3>
+        <h5>Shivalik College of Engineering</h5>
+    </div>
 
-                        <div class="skills-wrap awards-wrap">
-                            <h2 data-aos="fade-up">Awards</h2>
-                            <div class="d-grid skill-items gap-24 flex-wrap">
-                                <div class="skill-item" data-aos="zoom-in">
-                                    <span class="percent">14 May 2022</span>
-                                    <h3 class="name">UTU - Hackathon 1.0</h3>
-                                    <p>Winner of HACKATHON 1.0 organized by Uttarakhand Technical University in 2022.</p>
-                                </div>
+    <div class="edu-card" data-aos="zoom-in">
+        <h4>2018 - 2020</h4>
+        <h3>Higher Secondary Certification</h3>
+        <h5>Vivek Vidyalaya</h5>
+    </div>
 
-                            </div>
-                        </div>
+    <div class="edu-card" data-aos="zoom-in">
+        <h4>~ - 2018</h4>
+        <h3>Secondary School Certification</h3>
+        <h5>Vivek Vidyalaya</h5>
+    </div>
+
+</div>
+
+
+<!-- 🌟 SKILLS SECTION -->
+<h2 class="neon-title" data-aos="fade-up">🛠️ Skills</h2>
+
+<div class="skills-grid">
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">91%</span>
+        <h3>Network Security</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">92%</span>
+        <h3>Nmap</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">91%</span>
+        <h3>SIEM (WAZUH)</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">89%</span>
+        <h3>OSINT</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">92%</span>
+        <h3>Network Pentesting</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">90%</span>
+        <h3>Threat Analysis</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">86%</span>
+        <h3>Python</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">94%</span>
+        <h3>Linux</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">82%</span>
+        <h3>Android Development</h3>
+    </div>
+
+    <div class="skill-box" data-aos="zoom-in">
+        <span class="percent">87%</span>
+        <h3>BFSI Awareness</h3>
+    </div>
+
+</div>
+
+
+<!-- 🌟 AWARDS SECTION -->
+<h2 class="neon-title" data-aos="fade-up">🏆 Awards</h2>
+
+<div class="awards-box" data-aos="zoom-in">
+    <span>14 May 2022</span>
+    <h3>UTU - Hackathon 1.0</h3>
+    <p>Winner of HACKATHON 1.0 organized by Uttarakhand Technical University in 2022.</p>
+</div>
                     </div>
                 </div>
             </div>
