@@ -270,3 +270,14 @@ const animationTimeline = () => {
         tl.restart();
     });
 }
+
+// Image switcher
+const imageElement = document.getElementById("imagePath");
+let isMoni1 = true;
+
+setInterval(() => {
+    if (imageElement) {
+        imageElement.src = isMoni1 ? "img/moni2.png" : "img/moni1.png";
+        isMoni1 = !isMoni1;
+    }
+}, 2000);
