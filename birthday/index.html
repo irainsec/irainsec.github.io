@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>Happy Birthday!!! :)</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+    <!-- My Style -->
+    <link rel="stylesheet" href="./style/main.css" />
+</head>
+
+<body>
+
+    <div id="background-slideshow"></div>
+
+    <audio class="song" loop autoplay>
+        <source src="./music/hbd.mpeg">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+
+    <div class="container">
+        <div class="one">
+            <h1 class="one">
+                Hi
+                <span id="name">Anushka💟</span>
+            </h1>
+            <p class="two" id="greetingText">I really like your name btw!</p>
+        </div>
+
+        <div class="three">
+            <p>It's your birthday!! :D</p>
+        </div>
+
+        <div class="four">
+            <div class="chat-box">
+                <div class="chat-header">
+                    <div class="avatar">M</div>
+                    <div class="user-info">
+                        <span class="username">Little Troublemaker💟</span>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <div class="message outgoing">
+                        Hey! Guess what day it is? 🙈
+                    </div>
+                    <div class="message outgoing">
+                        I have something meant just for you... 💝
+                    </div>
+                    <!-- Main message will be appended here dynamically -->
+                    <p class="hbd-chatbox" style="display: none;">
+                        Happy Birthday, my love 🤍, I know things haven’t been easy, but today I just want you to feel
+                        how special you are. You mean so much to me—more than words can properly say. I hope this year
+                        brings you peace, strength, and lots of reasons to smile. I’ll always care about you, always
+                        wish the best for you, and always be here in my own way. Smile today, okay? You deserve that and
+                        so much more💫</p>
+                </div>
+                <div class="chat-footer">
+                    <div class="fake-input" id="typingInput"></div>
+                    <button class="send-btn" id="sendBtn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="five">
+            <p class="idea-1">That's what I was going to do.</p>
+            <p class="idea-2">But then I stopped.</p>
+            <p class="idea-3">
+                I realised, I wanted to do something<br>
+                <strong>special</strong>
+                .
+            </p>
+            <p class="idea-4">Because,</p>
+            <p class="idea-5">
+                You are Special
+                <span>:)</span>
+            </p>
+            <p class="idea-6">
+                <span>S</span>
+                <span>O</span>
+            </p>
+        </div>
+
+        <div class="six">
+            <div class="wish">
+                <h3 class="wish-hbd">Happy Birthday!! 🎂🧚‍♀️✨</h3>
+                <h5 id="wishText">May all your wishes come true! 💖🥺</h5>
+            </div>
+        </div>
+
+        <div class="seven">
+            <div class="baloons">
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon2.svg" alt="" />
+                <img src="img/ballon1.svg" alt="" />
+                <img src="img/ballon3.svg" alt="" />
+            </div>
+        </div>
+
+        <div class="eight">
+            <!-- Heart 1 -->
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <!-- Star 1 -->
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <!-- Heart 2 -->
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <!-- Star 2 -->
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <!-- Heart 3 -->
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <!-- Star 3 -->
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <!-- MORE CONFETTI -->
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+            <svg viewBox="0 0 32 29.6" class="heart">
+                <path
+                    d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-11.3,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            <svg viewBox="0 0 50 50" class="star">
+                <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" />
+            </svg>
+        </div>
+
+        <div id="gift-box-container">
+            <div class="gift-box">
+                <div class="gift-lid">
+                    <div class="gift-bow"></div>
+                </div>
+                <div class="gift-body"></div>
+            </div>
+            <p class="click-me">Click me! 🥺</p>
+        </div>
+
+        <div class="nine" id="finalMessage">
+            <div class="hbd-center">
+                Happy Birthday Once Again! 🥳💖
+            </div>
+            <div class="corner-notification" id="cornerMsg">
+                <p>You're my favorite notification 💌</p>
+                <div class="replay-btn-container">
+                    <button class="replay" id="replay">
+                        Watch it again ↺
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Greensock -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<!-- Sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="application/javascript" src="./script/main.js"></script>
+
+</html>

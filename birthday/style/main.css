@@ -1,0 +1,821 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #fff0f5 0%, #e6e6fa 100%);
+  /* Lavender Blush to Lavender */
+  color: #6d6875;
+  /* Softer text color */
+  overflow: hidden;
+  /* Prevent scrollbars during full-screen animations */
+}
+
+.song {
+  visibility: hidden;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+}
+
+#background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-photo {
+  position: absolute;
+  opacity: 0;
+  /* JS will fade it in to 0.15 or similar */
+  transition: opacity 2s ease-in-out;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+.container>div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20vh;
+}
+
+.one {
+  font-size: 5rem;
+  font-family: 'Pacifico', cursive;
+  color: #ff6aa3;
+  text-shadow: 2px 2px 0px #fff;
+}
+
+.two {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: #8d99ae;
+}
+
+.three {
+  font-size: 3.5rem;
+  font-family: 'Pacifico', cursive;
+  color: #e5989b;
+}
+
+/* Chat Box Styling */
+.four .chat-box {
+  background-color: #fff;
+  border-radius: 25px;
+  margin: 0 auto;
+  position: relative;
+  width: 600px;
+  max-width: 90vw;
+  box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: linear-gradient(to right, #ff99c8, #ff6aa3);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.chat-header .avatar {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  border: 2px solid #fff;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-info .username {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.user-info .status {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.chat-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 250px;
+  /* Slightly taller for history */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  /* Allow scrolling if needed */
+}
+
+/* Chat Bubbles */
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  position: relative;
+  clear: both;
+}
+
+.message.incoming {
+  background-color: #e9ecef;
+  color: #495057;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.message.outgoing {
+  background-color: #ff99c8;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 2px 5px rgba(255, 153, 200, 0.4);
+}
+
+/* The actual big birthday text when it appears as a bubble */
+/* We might want to remove specific hbd-chatbox styles or adapt them to be an outgoing bubble */
+.hbd-chatbox {
+  display: none;
+  /* Initially hidden */
+}
+
+/* Cursor logic */
+.cursor {
+  /* No longer needed in bubble, mostly for input but we use input field now */
+  display: none;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.chat-footer {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-top: 1px solid #f1f1f1;
+  display: flex;
+  align-items: flex-end;
+  /* Align to bottom as input grows */
+  justify-content: space-between;
+}
+
+.fake-input {
+  /* Styling for the actual input now */
+  width: 85%;
+  border: none;
+  background: #f1f3f5;
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: #495057;
+  font-size: 0.9rem;
+  outline: none;
+  /* Auto-expanding logic */
+  height: auto;
+  min-height: 40px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  /* Allows multiline */
+  display: block;
+  text-align: left;
+  /* Fix centered text */
+}
+
+.send-btn {
+  background-color: #ff6aa3;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  flex-shrink: 0;
+  /* Ensures button doesn't get squished */
+  box-shadow: 0 4px 10px rgba(255, 106, 163, 0.4);
+}
+
+.send-btn:hover {
+  transform: scale(1.1);
+  background-color: #ff4d91;
+}
+
+.send-btn svg {
+  width: 20px;
+  height: 20px;
+  margin-left: -2px;
+  margin-top: 2px;
+}
+
+.five p {
+  font-size: 2.5rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  font-family: 'Pacifico', cursive;
+  color: #b5838d;
+}
+
+.idea-3 strong {
+  border-radius: 5px;
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #ffcdb2;
+  color: #fff;
+}
+
+.five .idea-5 {
+  font-size: 5rem;
+  color: #e5989b;
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span {
+  font-size: 12rem;
+  color: #ffb4a2;
+}
+
+
+.six {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+}
+
+.six img {
+  display: inline-block;
+  height: 350px;
+  max-width: 100%;
+  border-radius: 50%;
+  /* Make profile pic circular */
+  border: 8px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.six .hat {
+  left: 41.5%;
+  position: absolute;
+  top: -30%;
+  width: 100px;
+  border-radius: 0;
+  /* Hat shouldn't be circular */
+  border: none;
+  box-shadow: none;
+}
+
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+.seven,
+.eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 30px;
+  z-index: -1;
+}
+
+/* Shine effect for confetti */
+.eight svg {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* Varied cute colors for confetti */
+.eight svg:nth-child(1) {
+  fill: #ff99c8;
+  left: 5vw;
+  top: 7vh;
+}
+
+/* Gold */
+.eight svg:nth-child(2) {
+  fill: #ffd700;
+  left: 35vw;
+  top: 23vh;
+}
+
+/* HotPink */
+.eight svg:nth-child(3) {
+  fill: #ff6aa3;
+  left: 23vw;
+  top: 33vh;
+}
+
+/* Yellow */
+.eight svg:nth-child(4) {
+  fill: #ffe135;
+  left: 57vw;
+  top: 43vh;
+}
+
+/* Pastel Red */
+.eight svg:nth-child(5) {
+  fill: #ffb7b2;
+  left: 7vw;
+  top: 68vh;
+}
+
+/* Lavender */
+.eight svg:nth-child(6) {
+  fill: #e4c1f9;
+  left: 77vw;
+  top: 42vh;
+}
+
+/* Orange-Yellow */
+.eight svg:nth-child(7) {
+  fill: #ffbe0b;
+  left: 83vw;
+  top: 68vh;
+}
+
+/* Orange */
+.eight svg:nth-child(8) {
+  fill: #fb5607;
+  left: 37vw;
+  top: 86vh;
+}
+
+/* Purple */
+.eight svg:nth-child(9) {
+  fill: #8338ec;
+  left: 87vw;
+  top: 94vh;
+}
+
+/* More cute confetti colors */
+.eight svg:nth-child(10) {
+  fill: #8ecae6;
+  left: 15vw;
+  top: 15vh;
+}
+
+.eight svg:nth-child(11) {
+  fill: #219ebc;
+  left: 75vw;
+  top: 25vh;
+}
+
+.eight svg:nth-child(12) {
+  fill: #023047;
+  left: 45vw;
+  top: 85vh;
+}
+
+.eight svg:nth-child(13) {
+  fill: #ffb703;
+  left: 5vw;
+  top: 55vh;
+}
+
+.eight svg:nth-child(14) {
+  fill: #fb8500;
+  left: 95vw;
+  top: 65vh;
+}
+
+.eight svg:nth-child(15) {
+  fill: #cdb4db;
+  left: 25vw;
+  top: 5vh;
+}
+
+.eight svg:nth-child(16) {
+  fill: #ffc8dd;
+  left: 65vw;
+  top: 35vh;
+}
+
+.eight svg:nth-child(17) {
+  fill: #ffafcc;
+  left: 35vw;
+  top: 95vh;
+}
+
+#gift-box-container {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  /* Centering */
+  text-align: center;
+  visibility: hidden;
+  /* Hidden initially */
+  z-index: 10;
+  cursor: pointer;
+}
+
+.gift-box {
+  /* Remove font-size: 5rem; which was for emoji */
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: block;
+  /* Ensure block */
+  margin: 0 auto;
+  /* Center in container */
+  animation: bounce 2s infinite ease-in-out;
+  cursor: pointer;
+}
+
+.gift-body {
+  position: absolute;
+  top: 35px;
+  /* Align specifically below lid (10px top + 25px height = 35px) */
+  left: 0;
+  width: 100px;
+  height: 65px;
+  /* Remaining height */
+  background: #ff6aa3;
+  /* Main Body Pink */
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset -10px -10px rgba(0, 0, 0, 0.1);
+}
+
+.gift-body::before {
+  /* Vertical Ribbon */
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  background: #ffec99;
+  /* Ribbon Yellow */
+}
+
+.gift-lid {
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  width: 110px;
+  /* Wider than body */
+  height: 25px;
+  background: #ff8fa3;
+  /* Lid slightly lighter/darker */
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.gift-lid::before {
+  /* Vertical Ribbon on Lid */
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  background: #ffec99;
+}
+
+.gift-bow {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 40px;
+}
+
+.gift-bow::before,
+.gift-bow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background: #ffec99;
+  border-radius: 50% 50% 0 50%;
+  box-shadow: inset -3px -3px rgba(0, 0, 0, 0.1);
+}
+
+.gift-bow::before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.gift-bow::after {
+  right: 0;
+  transform: rotate(-45deg) scaleX(-1);
+  /* Mirror for symmetry */
+  border-radius: 50% 50% 50% 0;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(3deg);
+  }
+
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+.click-me {
+  margin-top: 10px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+  color: #555;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nine {
+  visibility: hidden;
+  /* Hidden until gift is opened */
+}
+
+.wish-hbd {
+  font-size: 4em;
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(to right, #ff6aa3, #ff99c8, #ff6aa3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #ff6aa3;
+  /* Fallback */
+  animation: shine 3s infinite linear;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+@keyframes shine {
+  0% {
+    filter: brightness(100%);
+    transform: scale(1);
+  }
+
+  50% {
+    filter: brightness(120%);
+    transform: scale(1.02);
+  }
+
+  100% {
+    filter: brightness(100%);
+    transform: scale(1);
+  }
+}
+
+.wish h5 {
+  font-size: 2.2rem;
+  font-weight: lighter;
+  margin: 10px 0 0;
+  color: #9d4edd;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.nine p {
+  font-size: 2.2rem;
+  font-weight: lighter;
+  font-family: 'Pacifico', cursive;
+  color: #b5838d;
+}
+
+
+.hbd-center {
+  font-size: 5rem;
+  /* Even bigger */
+  font-family: 'Indie Flower', cursive;
+  color: #ff6aa3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.corner-notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.corner-notification p {
+  margin: 0;
+  font-size: 2.5rem;
+  /* Much bigger */
+  color: #555;
+  font-family: 'Pacifico', cursive;
+  /* Match the vibe */
+  text-align: center;
+}
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+  padding: 5px 12px;
+  /* Smaller button */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 30px;
+  transition: transform 0.2s ease;
+  font-size: 0.9rem;
+  /* Smaller text */
+  color: #555;
+}
+
+#replay:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries */
+@media screen and (max-height: 1000px) {
+  .six .hat {
+    left: 40%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .six .hat {
+    left: 37%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-height: 850px) and (max-width: 450px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
+  .four .text-box {
+    width: 90%;
+  }
+
+  .text-box .fake-btn {
+    bottom: -50px;
+    right: 5px;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .idea-5 span {
+    display: block;
+  }
+
+  .idea-6 span {
+    font-size: 6rem;
+  }
+
+  .six .hat {
+    width: 60px;
+    top: -20%;
+  }
+
+  .wish-hbd {
+    font-size: 2.5em;
+  }
+
+  .wish h5 {
+    font-size: 1.4rem;
+  }
+
+  .nine p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
+
+/* Cute Popup Styles - GLOBAL */
+div.cute-popup {
+  border-radius: 50px !important;
+  /* Extremely round */
+  border: 8px solid #ff99c8 !important;
+  /* Thicker pink border */
+  background: #fff0f5 !important;
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4) !important;
+  animation: popup-wiggle 3s infinite ease-in-out !important;
+  overflow: visible !important;
+  /* Let things poke out if needed */
+}
+
+.cute-title {
+  font-family: 'Indie Flower', cursive !important;
+  color: #ff6aa3 !important;
+  font-size: 2.2rem !important;
+  margin-top: 20px !important;
+}
+
+/* Keyframes for a gentle float/wiggle */
+@keyframes popup-wiggle {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translateY(5px) rotate(1deg);
+  }
+}
